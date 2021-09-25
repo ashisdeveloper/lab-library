@@ -15,3 +15,64 @@ export async function request(url, data = {}, authorization = 0) {
 	finalResult = { ...finalResult, status: result.status };
 	return finalResult;
 }
+
+export const shortenText = (input, len) => {
+	if (input.length > len) {
+		return input.substring(0, len) + "...";
+	}
+	return input;
+};
+
+export const fileExtension = (file) => {
+	let arr = file.split(".");
+	return arr.pop();
+};
+
+export const shuffleStr = (word) => {
+	var shuffledWord = "";
+	word = word.toString();
+	word = word.split("");
+	while (word.length > 0) {
+		shuffledWord += word.splice((word.length * Math.random()) << 0, 1);
+	}
+	return shuffledWord;
+};
+
+export const formatPhoneNum = (str) => {
+	let no = str.slice(-10);
+	let ext = str.replace(no, "");
+	let no1 = no.slice(0, 3);
+	let no2 = no.slice(3, 6);
+	let no3 = no.slice(6, 10);
+	return ext + " " + "(" + no1 + ")" + " " + no2 + "-" + no3;
+};
+
+export const strToUrl = (str) => {
+	str = str.toLowerCase();
+	return str.replace(/(\s|_|&|;|\.)/g, "-").replace(/\-+/g, "-");
+};
+
+export const sanitizeDbData = (data) => {
+	data = JSON.stringify(data);
+	data = JSON.parse(data);
+	data = data.map((item) => {
+		Object.keys(item).map((itm) => {
+			if (item[itm] == null) item[itm] = "";
+			try {
+				item[itm] = JSON.parse(item[itm]);
+			} catch (error) {}
+		});
+		return item;
+	});
+	return data;
+};
+
+export const generateOtp = (len) => {
+	var text = "";
+	var possible = "123456789";
+	for (var i = 0; i < len; i++) {
+		var sup = Math.floor(Math.random() * possible.length);
+		text += i > 0 && sup == i ? "0" : possible.charAt(sup);
+	}
+	return Number(text);
+};
