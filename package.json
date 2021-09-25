@@ -1,0 +1,28 @@
+{
+  "name": "lab-library",
+  "version": "1.0.0",
+  "description": "Node JS & Javascript functionalities",
+  "main": "app.js",
+  "scripts": {
+    "test": "ashis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashisdeveloper/lab-library.git"
+  },
+  "keywords": [
+    "javascript-library",
+    "node-library",
+    "lab-library",
+    "js-library"
+  ],
+  "author": "Ashis Kumar <srimanashis@gmail.com> (https://www.softtechlab.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashisdeveloper/lab-library/issues"
+  },
+  "homepage": "https://github.com/ashisdeveloper/lab-library#readme",
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}
