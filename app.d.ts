@@ -1,1 +1,1 @@
-declare module "*";
+declare module "lab-library"

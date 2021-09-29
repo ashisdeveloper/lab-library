@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 async function request(url, data = {}, authorization = 0) {
 	let method = Object.keys(data).length > 0 ? "POST" : "GET";
 	let result;
@@ -16,11 +18,11 @@ async function request(url, data = {}, authorization = 0) {
 	return finalResult;
 }
 
-const shortenText = (input, len) => {
-	if (input.length > len) {
-		return input.substring(0, len) + "...";
+const shortenText = (text, len) => {
+	if (text.length > len) {
+		return text.substring(0, len) + "...";
 	}
-	return input;
+	return text;
 };
 
 const fileExtension = (file) => {
@@ -76,5 +78,7 @@ const generateOtp = (len) => {
 	}
 	return Number(text);
 };
+
+shortenText.propTypes = { text: PropTypes.string, len: PropTypes.number };
 
 module.exports = { request, shortenText, fileExtension, shuffleStr, formatPhoneNum, strToUrl, sanitizeDbData, generateOtp };
