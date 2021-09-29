@@ -1,11 +1,11 @@
 # lab-library
 
-This JS library is just a collection of functions.
+This JS library is just a collection of Node JS Methods.
 
 ## Install
 
 ```
-npm i date-and-time
+npm i lab-library
 ```
 
 ## Getting Started

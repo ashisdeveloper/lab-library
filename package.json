@@ -2,7 +2,7 @@
   "name": "lab-library",
   "version": "1.0.2",
   "description": "Node JS & Javascript functionalities",
-  "main": "app.js",
+  "main": "app",
   "scripts": {
     "test": "ashis"
   },
