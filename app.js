@@ -1,4 +1,4 @@
-export async function request(url, data = {}, authorization = 0) {
+async function request(url, data = {}, authorization = 0) {
 	let method = Object.keys(data).length > 0 ? "POST" : "GET";
 	let result;
 	if (method == "POST")
@@ -16,19 +16,19 @@ export async function request(url, data = {}, authorization = 0) {
 	return finalResult;
 }
 
-export const shortenText = (input, len) => {
+const shortenText = (input, len) => {
 	if (input.length > len) {
 		return input.substring(0, len) + "...";
 	}
 	return input;
 };
 
-export const fileExtension = (file) => {
+const fileExtension = (file) => {
 	let arr = file.split(".");
 	return arr.pop();
 };
 
-export const shuffleStr = (word) => {
+const shuffleStr = (word) => {
 	var shuffledWord = "";
 	word = word.toString();
 	word = word.split("");
@@ -38,7 +38,7 @@ export const shuffleStr = (word) => {
 	return shuffledWord;
 };
 
-export const formatPhoneNum = (str) => {
+const formatPhoneNum = (str) => {
 	let no = str.slice(-10);
 	let ext = str.replace(no, "");
 	let no1 = no.slice(0, 3);
@@ -47,12 +47,12 @@ export const formatPhoneNum = (str) => {
 	return ext + " " + "(" + no1 + ")" + " " + no2 + "-" + no3;
 };
 
-export const strToUrl = (str) => {
+const strToUrl = (str) => {
 	str = str.toLowerCase();
 	return str.replace(/(\s|_|&|;|\.)/g, "-").replace(/\-+/g, "-");
 };
 
-export const sanitizeDbData = (data) => {
+const sanitizeDbData = (data) => {
 	data = JSON.stringify(data);
 	data = JSON.parse(data);
 	data = data.map((item) => {
@@ -67,7 +67,7 @@ export const sanitizeDbData = (data) => {
 	return data;
 };
 
-export const generateOtp = (len) => {
+const generateOtp = (len) => {
 	var text = "";
 	var possible = "123456789";
 	for (var i = 0; i < len; i++) {
@@ -76,3 +76,5 @@ export const generateOtp = (len) => {
 	}
 	return Number(text);
 };
+
+module.exports = { request, shortenText, fileExtension, shuffleStr, formatPhoneNum, strToUrl, sanitizeDbData, generateOtp };
