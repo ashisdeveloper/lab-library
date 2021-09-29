@@ -10,13 +10,12 @@ npm i lab-library
 
 ## Getting Started
 
-| Methods          | parameters                          | Description |
-| ---------------- | ----------------------------------- | ----------- |
-| `request`        | `url, data = {}, authorization = 0` |             |
-| `shortenText`    | `input, len`                        |             |
-| `fileExtension`  | `file`                              |             |
-| `shuffleStr`     | `word`                              |             |
-| `formatPhoneNum` | `str`                               |             |
-| `strToUrl`       | `str`                               |             |
-| `sanitizeDbData` | `data`                              |             |
-| `generateOtp`    | `len`                               |             |
+| Methods          | Description |
+| ---------------- | ----------- |
+| `request`        |             |
+| `shortenText`    |             |
+| `fileExtension`  |             |
+| `shuffleStr`     |             |
+| `formatPhoneNum` |             |
+| `strToUrl`       |             |
+| `generateOtp`    |             |

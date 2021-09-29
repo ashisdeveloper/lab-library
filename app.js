@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 async function request(url, data = {}, authorization = 0) {
 	let method = Object.keys(data).length > 0 ? "POST" : "GET";
 	let result;
@@ -54,21 +52,6 @@ const strToUrl = (str) => {
 	return str.replace(/(\s|_|&|;|\.)/g, "-").replace(/\-+/g, "-");
 };
 
-const sanitizeDbData = (data) => {
-	data = JSON.stringify(data);
-	data = JSON.parse(data);
-	data = data.map((item) => {
-		Object.keys(item).map((itm) => {
-			if (item[itm] == null) item[itm] = "";
-			try {
-				item[itm] = JSON.parse(item[itm]);
-			} catch (error) {}
-		});
-		return item;
-	});
-	return data;
-};
-
 const generateOtp = (len) => {
 	var text = "";
 	var possible = "123456789";
@@ -78,7 +61,5 @@ const generateOtp = (len) => {
 	}
 	return Number(text);
 };
-
-shortenText.propTypes = { text: PropTypes.string, len: PropTypes.number };
 
 module.exports = { request, shortenText, fileExtension, shuffleStr, formatPhoneNum, strToUrl, sanitizeDbData, generateOtp };
